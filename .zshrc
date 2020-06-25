@@ -4,7 +4,7 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/curl/lib -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/curl/include -I/user/local/opt/openssl/include"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jfudally/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
