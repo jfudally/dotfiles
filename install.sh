@@ -1,8 +1,8 @@
 #!/bin/bash
 readonly configs=".vimrc .zshrc"
 
-git submodules init
-git submodules update
+git submodule init
+git submodule update
 
 for config in ${configs}; do
     dest="${HOME}/${config}"
