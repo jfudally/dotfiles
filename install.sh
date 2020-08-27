@@ -1,5 +1,5 @@
 #!/bin/bash
-readonly configs=".vimrc .zshrc"
+readonly configs=".vimrc .zshrc .tmux.conf"
 
 git submodule init
 git submodule update
