@@ -18,8 +18,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -106,6 +104,8 @@ bindkey '^R' history-incremental-search-backward
 # Envs
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -116,10 +116,8 @@ alias ohmyconfig='vi ~/.zshrc'
 alias ohmyrefresh='source ~/.zshrc'
 # Goto
 alias gogo='cd ~/go/src/github.com/'
-alias gogit='cd ~/github/'
 alias gowork='cd ~/workspace'
 alias godocker='cd ~/workspace/dockerfiles'
-alias goshell='ssh shell'
 # Docs/notes
 alias notes='vi ~/notes.txt'
 alias input='vi ~/input.txt'
