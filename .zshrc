@@ -121,11 +121,10 @@ alias godocker='cd ~/workspace/dockerfiles'
 # Docs/notes
 alias notes='vi ~/notes.txt'
 alias input='vi ~/input.txt'
-# Azure
-alias sshazure='ssh -i ~/.ssh/azure'
-# Functions
-# Github
-gitget() {
-  local repo=${1}
-  git clone git@github.com:${repo} $(basename ${repo})
-}
+
+# Custom Files to Source
+if [[ -d ~/.sourceables ]] ; then
+  for f in $(find ~/.sourceables -type f -print); do
+    source ${f}
+  done
+fi
