@@ -111,6 +111,8 @@ eval "$(pyenv init -)"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# General Aliases
+alias ll='ls -altr'
 # Utils
 alias ohmyconfig='vi ~/.zshrc'
 alias ohmyrefresh='source ~/.zshrc'
@@ -128,3 +130,8 @@ if [[ -d ~/.sourceables ]] ; then
     source ${f}
   done
 fi
+
+# Touchbar
+refresh_touch_bar() {
+  sudo pkill TouchBarServer
+}
