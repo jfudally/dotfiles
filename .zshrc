@@ -131,3 +131,8 @@ gitget() {
   local repo=${1}
   git clone git@github.com:${repo} $(basename ${repo})
 }
+
+# Touchbar
+refresh_touch_bar() {
+  sudo pkill TouchBarServer
+}
