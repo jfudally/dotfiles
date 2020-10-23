@@ -123,6 +123,10 @@ alias godocker='cd ~/workspace/dockerfiles'
 # Docs/notes
 alias notes='vi ~/notes.txt'
 alias input='vi ~/input.txt'
+# Common 
+alias g='grep'
+alias s='sed'
+alias c='curl -k'
 
 # Custom Files to Source
 if [[ -d ~/.sourceables ]] ; then
