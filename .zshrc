@@ -13,6 +13,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -104,9 +105,9 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # Envs
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
+[[ $(command -v nodenv) ]] && eval "$(nodenv init -)"
+[[ $(command -v rbenv) ]] && eval "$(rbenv init -)"
+[[ $(command -v pyenv) ]] &&  eval "$(pyenv init -)"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
