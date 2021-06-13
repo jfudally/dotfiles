@@ -129,6 +129,8 @@ alias input='vi ~/input.txt'
 alias g='grep'
 alias s='sed'
 alias c='curl -k'
+# Network
+alias dns-flush='sudo killall -HUP mDNSResponder'
 
 # Custom Files to Source
 if [[ -d ~/.sourceables ]] ; then
