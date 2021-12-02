@@ -3,6 +3,7 @@
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/curl/lib -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/curl/include -I/user/local/opt/openssl/include"
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -100,6 +101,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# General Exports
+export EDITOR=vi
+export SUDO_EDITOR=${EDITOR}
+
 # Bindkeys
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -129,7 +134,8 @@ alias input='vi ~/input.txt'
 # Common 
 alias g='grep'
 alias s='sed'
-alias c='curl -k'
+alias curl='curl -sk'
+alias c='curl -sk'
 # Network
 alias dns-flush='sudo killall -HUP mDNSResponder'
 
