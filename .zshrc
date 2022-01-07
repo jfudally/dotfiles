@@ -141,8 +141,8 @@ alias dns-flush='sudo killall -HUP mDNSResponder'
 # Utils
 alias lsof_port='sudo lsof -nP -i'
 # Antlr
-$ alias antlr4='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
-$ alias grun='java org.antlr.v4.gui.TestRig'
+alias antlr4='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
 
 # External source files
 if [[ -d ~/.sourceables ]] ; then
