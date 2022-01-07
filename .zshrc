@@ -3,7 +3,7 @@
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/curl/lib -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/curl/include -I/user/local/opt/openssl/include"
-
+export CLASSPATH=".:/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH"
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -138,8 +138,13 @@ alias curl='curl -sk'
 alias c='curl -sk'
 # Network
 alias dns-flush='sudo killall -HUP mDNSResponder'
+# Utils
+alias lsof_port='sudo lsof -nP -i'
+# Antlr
+$ alias antlr4='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
+$ alias grun='java org.antlr.v4.gui.TestRig'
 
-# Custom Files to Source
+# External source files
 if [[ -d ~/.sourceables ]] ; then
   for f in $(find ~/.sourceables -type f -print); do
     source ${f}
@@ -149,4 +154,14 @@ fi
 # Touchbar
 refresh_touch_bar() {
   sudo pkill TouchBarServer
+}
+
+# Local ssh tunnel
+tunnel_to() {
+  local _hostname=${1}
+  local _port=${2}
+  local _local_port="1${_port}"
+  echo "Open a browser here: http://localhost:${_local_port} and press [Enter]"
+  wait
+  ssh -L ${_local_port}:localhost:${_port} ${_hostname}
 }
