@@ -120,22 +120,17 @@ bindkey '^R' history-incremental-search-backward
 # For a full list of active aliases, run `alias`.
 #
 # General Aliases
-alias ll='ls -altr'
+alias ll='lsd -altr'
+alias ls='lsd'
+alias cat='bat'
+alias grep='rp'
+alias curl='curl -sk'
 # Utils
 alias ohmyconfig='vi ~/.zshrc'
 alias ohmyrefresh='source ~/.zshrc'
-# Goto
-alias gogo='cd ~/go/src/github.com/'
-alias gowork='cd ~/workspace'
-alias godocker='cd ~/workspace/dockerfiles'
 # Docs/notes
 alias notes='vi ~/notes.txt'
 alias input='vi ~/input.txt'
-# Common 
-alias g='grep'
-alias s='sed'
-alias curl='curl -sk'
-alias c='curl -sk'
 # Network
 alias dns-flush='sudo killall -HUP mDNSResponder'
 # Utils
