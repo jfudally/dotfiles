@@ -123,7 +123,7 @@ bindkey '^R' history-incremental-search-backward
 alias ll='lsd -altr'
 alias ls='lsd'
 alias cat='bat'
-alias grep='rp'
+alias grep='rg'
 alias curl='curl -sk'
 # Utils
 alias ohmyconfig='vi ~/.zshrc'
