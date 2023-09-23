@@ -1,0 +1,22 @@
+# General
+alias ll="ls -altr"
+alias ohmyconfig="vi ~/.zshrc"
+alias ohmyrefresh="source ~/.zshrc"
+
+# Goto
+alias gowork="cd ~/workspace"
+alias goscripts="cd ~/workspace/scripts"
+
+# Docs / Notes
+alias notes="vi ~/notes.txt"
+
+# Common
+alias grep="rg"
+alias cat="bat"
+alias curl="curl -k"
+
+# Network
+alias dns-flush="sudo killall -HUP mDNSResponder"
+alias lsof-port="sudo lsof -nP -i :"
+
+
