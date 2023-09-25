@@ -30,6 +30,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
