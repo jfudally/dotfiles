@@ -51,3 +51,5 @@ if [[ -d ~/.sourceables ]] ; then
   done
 fi
 
+# Source asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
