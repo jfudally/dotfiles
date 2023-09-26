@@ -3,6 +3,7 @@ export LDFLAGS="-L/usr/local/opt/curl/lib -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/curl/include -I/user/local/opt/openssl/include"
 export ZSH="${HOME}/.oh-my-zsh"
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
