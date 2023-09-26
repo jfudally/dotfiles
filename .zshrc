@@ -16,6 +16,7 @@ export PATH="$HOME/workspace/scripts:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
 export PATH="$(brew --prefix)/bin:$PATH"
 
+
 ZSH_THEME="agnoster"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -34,6 +35,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source $HOME/.zprofile
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
