@@ -13,6 +13,7 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/workspace/scripts:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
+export PATH="$(brew --prefix)/bin:$PATH"
 
 ZSH_THEME="agnoster"
 
