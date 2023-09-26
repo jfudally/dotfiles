@@ -11,7 +11,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="${HOME}/workspace/scripts:${PATH}"
+export PATH="$HOME/workspace/scripts:$PATH"
+export PATH="$HOME/.asdf/shims:$PATH"
 
 ZSH_THEME="agnoster"
 
