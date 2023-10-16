@@ -14,8 +14,10 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/workspace/scripts:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
-export PATH="$(brew --prefix)/bin:$PATH"
 
+if command -v brew ; then
+  export PATH="$(brew --prefix)/bin:$PATH"
+fi
 
 ZSH_THEME="agnoster"
 
@@ -35,7 +37,10 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-source $HOME/.zprofile
+
+if [[ -f $HOME/.zprofile ]] ; then
+  source $HOME/.zprofile
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -55,5 +60,7 @@ if [[ -d ~/.sourceables ]] ; then
   done
 fi
 
-# Source asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+if command -v asdf ; then
+  # Source asdf
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
