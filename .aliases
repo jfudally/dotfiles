@@ -1,5 +1,7 @@
 # General
-alias ls='lsd'
+if command -v lsd >/dev/null; then 
+  alias ls='lsd'
+fi
 alias ll="ls -altr"
 alias ohmyconfig="vi ~/.zshrc"
 alias ohmyrefresh="source ~/.zshrc"
