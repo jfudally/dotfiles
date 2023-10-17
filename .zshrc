@@ -15,7 +15,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/workspace/scripts:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
 
-if command -v brew ; then
+if command -v brew >/dev/null ; then
   export PATH="$(brew --prefix)/bin:$PATH"
 fi
 
@@ -60,7 +60,7 @@ if [[ -d ~/.sourceables ]] ; then
   done
 fi
 
-if command -v asdf ; then
+if command -v asdf >/dev/null; then
   # Source asdf
   . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
