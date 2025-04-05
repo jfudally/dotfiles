@@ -20,3 +20,8 @@ done
 rsync -a .oh-my-zsh ${HOME}
 rsync -a zsh-autosuggestions ${HOME}/.oh-my-zsh/plugins
 rsync -a zsh-syntax-highlighting ${HOME}/.oh-my-zsh/plugins
+
+mkdir -p ~/.local/env >/dev/null 2>&1
+cp Brewfile ~/.local/env/Brewfile
+
+brew bundle --file ~/.local/env/Brewfile

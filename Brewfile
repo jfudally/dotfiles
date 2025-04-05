@@ -1,0 +1,22 @@
+tap "buo/cask-upgrade"
+tap "homebrew/bundle"
+tap "homebrew/services"
+brew "bat"
+brew "fzf"
+brew "gh"
+brew "gnupg"
+brew "lsd"
+brew "mas"
+brew "mysql", restart_service: :changed
+brew "ollama", restart_service: :changed
+brew "opensearch"
+brew "pkgconf"
+brew "postgresql@14"
+brew "python@3.12"
+brew "python@3.13"
+brew "ripgrep"
+brew "sevenzip"
+brew "telnet"
+brew "tmux"
+brew "uv"
+brew "valkey", restart_service: :changed
