@@ -1,4 +1,5 @@
 tap "buo/cask-upgrade"
+brew "zsh"
 brew "bat"
 brew "fzf"
 brew "gh"
