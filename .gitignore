@@ -1,0 +1,9 @@
+# Backups produced by install.sh when it replaces an existing config
+*.bk
+
+# macOS
+.DS_Store
+
+# Editor scratch
+*.swp
+*~

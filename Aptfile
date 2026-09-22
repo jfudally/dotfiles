@@ -1,0 +1,53 @@
+# Aptfile — Ubuntu/Debian package manifest, the counterpart to the Brewfile.
+#
+# One bare package name per line; `#` starts a comment. Fed to apt-get by
+# scripts/packages_ubuntu.sh, which installs each package individually and
+# warns (rather than aborting) when one is unavailable on the running release.
+#
+# Naming differences from the Brewfile are called out inline. Packages with no
+# apt equivalent are listed at the bottom and handled by the install script.
+
+# Shell and terminal
+zsh
+tmux
+vim
+
+# Core CLI tooling
+make                # the repo's entrypoint is a Makefile
+bat                 # binary is `batcat` on Debian/Ubuntu; .aliases handles it
+fzf
+ripgrep             # Homebrew: ripgrep, binary `rg` on both
+gnupg
+pkgconf
+curl
+git
+unzip
+telnet
+
+# Archives
+p7zip-full          # Homebrew: sevenzip
+
+# Build prerequisites for asdf/uv-managed runtimes
+build-essential
+libssl-dev
+libreadline-dev
+zlib1g-dev
+
+# Python — Ubuntu ships whatever python3 the release pins, not python@3.13
+python3
+python3-pip
+python3-venv
+
+# Databases
+mysql-server
+postgresql
+postgresql-contrib
+
+# Not available via apt, installed by scripts/packages_ubuntu.sh instead:
+#   gh       — needs the GitHub cli.github.com apt repository
+#   uv       — installed via the official astral.sh script
+#   lsd      — only in universe on 23.04+; falls back to a GitHub .deb
+#
+# Deliberately omitted (no sensible Linux equivalent):
+#   mas      — Mac App Store CLI, macOS only
+#   valkey, opensearch — run these via Docker on Linux hosts
