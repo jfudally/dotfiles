@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # Lint and unit/integration tests on both platforms. The installer's package
+  # step is skipped here -- see the `install` job for the real thing.
+  test:
+    name: test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install zsh and shellcheck
+        run: |
+          if [ "$(uname -s)" = "Linux" ]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq zsh shellcheck
+          else
+            brew install shellcheck || true
+          fi
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+
+  # End-to-end: run the real installer, packages and all, in a clean container
+  # and confirm an interactive zsh starts cleanly afterwards.
+  install-ubuntu:
+    name: end-to-end install (ubuntu 24.04)
+    runs-on: ubuntu-latest
+    container: ubuntu:24.04
+    steps:
+      - name: Install checkout prerequisites
+        run: |
+          apt-get update -qq
+          apt-get install -y -qq git sudo curl ca-certificates
+
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Run the installer
+        run: ./install.sh
+
+      - name: Verify an interactive zsh starts cleanly
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          zsh -i -c 'echo "startup ok: DOTFILES_OS=$DOTFILES_OS"'
